@@ -3,7 +3,9 @@
 
 <!-- Header -->
 <?php
+// setting custom changes to header
 $title = "Search - Algorithm";
+$navbarActive = "search";
 include("../includes/header.php"); ?>
 
 <!-- Searching -->

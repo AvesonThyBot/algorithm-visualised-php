@@ -3,12 +3,14 @@
 
 <!-- Header -->
 <?php
+// setting custom changes to header
 $title = "Home - Algorithm";
+$navbarActive = "home";
 include("includes/header.php"); ?>
 
-
 <!-- Main -->
-<main>
+<main class="text-white">
+
 </main>
 
 <!-- Footer -->

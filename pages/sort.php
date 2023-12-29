@@ -5,6 +5,7 @@
 <?php
 // setting custom changes to header
 $title = "Sort - Algorithm";
+$navbarActive = "sorts";
 include("../includes/header.php"); ?>
 
 <!-- Sorting -->
