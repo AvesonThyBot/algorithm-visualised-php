@@ -10,7 +10,7 @@ if (strpos($_SERVER['PHP_SELF'], 'classes/') !== false || strpos($_SERVER['PHP_S
 <html lang="en">
 
 <head>
-    <title>Algorithm</title>
+    <title><?php echo $title; ?></title>
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8" />

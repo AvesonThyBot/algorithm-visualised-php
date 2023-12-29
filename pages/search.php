@@ -2,7 +2,9 @@
 <?php include("../classes/web-info.class.php"); ?>
 
 <!-- Header -->
-<?php include("../includes/header.php"); ?>
+<?php
+$title = "Search - Algorithm";
+include("../includes/header.php"); ?>
 
 <!-- Searching -->
 <?php

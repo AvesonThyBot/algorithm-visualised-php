@@ -2,7 +2,10 @@
 <?php include("../classes/web-info.class.php"); ?>
 
 <!-- Header -->
-<?php include("../includes/header.php"); ?>
+<?php
+// setting custom changes to header
+$title = "Sort - Algorithm";
+include("../includes/header.php"); ?>
 
 <!-- Sorting -->
 <?php
