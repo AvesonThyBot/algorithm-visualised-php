@@ -1,8 +1,12 @@
-<?php
-//  Class for web info 
-include("../classes/web-info.class.php");
+<!-- Class for web info -->
+<?php include("../classes/web-info.class.php"); ?>
 
-// include the classes
+<!-- Header -->
+<?php include("../includes/header.php"); ?>
+
+<!-- Searching -->
+<?php
+// include search class
 include "../classes/search.class.php";
 if (isset($_GET["type"])) {
     switch (strtolower($_GET["type"])) {
@@ -32,16 +36,7 @@ if (isset($_GET["type"])) {
             break;
     }
 }
+?>
 
-
-/*
-
-Linear Search
-Binary Search
-Ternary Search
-Jump Search
-Interpolation Search
-Exponential Search
-Fibonacci Search
-
-*/
+<!-- Footer -->
+<?php include("../includes/footer.php"); ?>

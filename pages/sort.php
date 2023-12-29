@@ -1,8 +1,12 @@
-<?php
-//  Class for web info 
-include("../classes/web-info.class.php");
+<!-- Class for web info -->
+<?php include("../classes/web-info.class.php"); ?>
 
-// include the classes
+<!-- Header -->
+<?php include("../includes/header.php"); ?>
+
+<!-- Sorting -->
+<?php
+// include sort class
 include "../classes/sort.class.php";
 if (isset($_GET["type"])) {
     switch ($_GET["type"]) {
@@ -32,16 +36,7 @@ if (isset($_GET["type"])) {
             break;
     }
 }
+?>
 
-
-/*
-
-Selection sort
-Bubble sort
-Insertion sort
-Merge sort
-Quick sort
-Counting sort
-Bogo sort
-
-*/
+<!-- Footer -->
+<?php include("../includes/footer.php"); ?>

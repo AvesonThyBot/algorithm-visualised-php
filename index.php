@@ -4,8 +4,9 @@
 <!-- Header -->
 <?php include("includes/header.php"); ?>
 
+
+<!-- Main -->
 <main>
-    <!-- Main -->
 </main>
 
 <!-- Footer -->
