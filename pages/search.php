@@ -1,7 +1,9 @@
 <?php
+//  Class for web info 
+include("../classes/web-info.class.php");
+
 // include the classes
-include "../includes/class-autoloader.inc.php";
-echo strtolower($_GET["type"]);
+include "../classes/search.class.php";
 if (isset($_GET["type"])) {
     switch (strtolower($_GET["type"])) {
         case 'linear':

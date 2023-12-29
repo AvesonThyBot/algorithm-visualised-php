@@ -1,4 +1,7 @@
 <?php
+//  Class for web info 
+include("../classes/web-info.class.php");
+
 // include the classes
 include "../classes/sort.class.php";
 if (isset($_GET["type"])) {
