@@ -26,4 +26,6 @@ include("includes/header.php"); ?>
 </main>
 
 <!-- Footer -->
-<?php include("includes/footer.php"); ?>
+<?php
+$extraScript = "/scripts/index.js";
+include("includes/footer.php"); ?>

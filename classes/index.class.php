@@ -1,9 +1,9 @@
 <?php
 
-// Class for title box
-class Title {
-    protected function sortAnimation() {
-    }
+// Checks if the URL contains "classes/" or "includes/"
+if (strpos($_SERVER['PHP_SELF'], 'classes/') !== false || strpos($_SERVER['PHP_SELF'], 'includes/') !== false) {
+    header('Location: ../index.php');
+    exit();
 }
 
 // Class for loading content
@@ -13,11 +13,11 @@ class LoadContent {
         echo '
         <div class="card bg-dark my-3 border-primary rounded text-white text-end">
             <div class="card-body">
-                <h3 class="card-text fw-bold">Sorting</h3>
-                <p class="card-text fw-semibold">And</p>
-                <h4 class="card-text fw-bold">Searching</h4>
-                <p class="card-text fw-semibold">Algorithm</p>
-                <p class="card-text fw-light text-start"><?php echo "Last Updated: " . date("jS F, g:ia", filemtime("index.php")) . " UTC."; ?></p>
+                <hh4 class="card-text fw-bold fs-1" id="title-sort">Sorting</hh4>
+                <h4 class="card-text fw-bold fs-1" id="title-search">Searching</h4>
+                <h4 class="card-text fw-bold fs-1" id="title-alg">Algorithm</h4>
+                <h4 class="card-text fw-bold fs-1" id="title-vis">Visualizer</h4>
+                <h4 class="card-text fw-light text-start fs-5">' . "Last Updated: " . date("jS F, g:ia", filemtime("index.php")) . " UTC." . '</h4>
             </div>
         </div>
         ';
