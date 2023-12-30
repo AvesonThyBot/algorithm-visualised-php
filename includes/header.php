@@ -27,6 +27,7 @@ if (strpos($_SERVER['PHP_SELF'], 'classes/') !== false || strpos($_SERVER['PHP_S
 
         body::-webkit-scrollbar-thumb {
             background-color: #0d6efd;
+            border-radius: 50px;
         }
 
         body::-webkit-scrollbar-track {
