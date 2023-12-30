@@ -11,9 +11,19 @@ include("includes/header.php"); ?>
 <!-- Main -->
 <main class="text-white">
     <!-- Intro -->
+    <div class="card bg-dark my-3 border-primary rounded text-white text-end">
+        <div class="card-body">
+            <h3 class="card-text fw-bold">Sorting</h3>
+            <p class="card-text fw-semibold">And</p>
+            <h4 class="card-text fw-bold">Searching</h4>
+            <p class="card-text fw-semibold">Algorithm</p>
+            <p class="card-text fw-light text-start"><?php echo "Last Updated: " . date("jS F, g:ia", filemtime("index.php")) . " UTC."; ?></p>
+
+        </div>
+    </div>
 
     <!-- Sorting -->
-    <div class="px-4 py-5 my-5 text-center border border-primary shadow rounded">
+    <div class="px-4 py-5 my-3 text-center border border-primary shadow rounded">
         <h1 class="display-5 fw-bold">Sorting Algorithms</h1>
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">
@@ -33,7 +43,7 @@ include("includes/header.php"); ?>
         </div>
     </div>
     <!-- Searching -->
-    <div class="px-4 py-5 my-5 text-center border border-info shadow rounded">
+    <div class="px-4 py-5 my-3 text-center border border-primary shadow rounded">
         <h1 class="display-5 fw-bold">Searching Algorithms</h1>
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">Delve into the world of efficient data retrieval with our searching algorithms. From the simplicity of Linear Search to the precision of Binary Search and the mathematical elegance of Fibonacci Search. Explore the collection underneath.
