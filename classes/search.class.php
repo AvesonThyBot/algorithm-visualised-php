@@ -60,4 +60,13 @@ class Search {
     public function getAllType() {
         return "hi";
     }
+
+    // Method to get title for webpage
+    public function getTitle() {
+        if (strlen($this->searchType) == 0) {
+            return "Searchs - Algorithm";
+        } else {
+            return ucfirst($this->searchType) . " - Search";
+        }
+    }
 }

@@ -1,6 +1,5 @@
 <!-- import classes -->
-<?php include("../classes/web-info.class.php");
-include("../classes/sort.class.php"); ?>
+<?php include("../classes/sort.class.php"); ?>
 
 <?php
 // Create object
@@ -10,12 +9,7 @@ $sortController = new Sort($_GET['type'] ?? '');
 <!-- Header -->
 
 <?php
-// setting custom changes to header
-if (strlen(ucfirst($sortController->getCurrentType())) == 0) {
-    $title = "Sorts - Algorithm";
-} else {
-    $title = ucfirst($sortController->getCurrentType()) . " - Sort";
-}
+$title = $sortController->getTitle();
 $navbarActive = "sorts";
 include("../includes/header.php"); ?>
 

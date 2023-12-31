@@ -60,4 +60,12 @@ class Sort {
     public function getAllType() {
         return "hi";
     }
+    // Method to get title for webpage
+    public function getTitle() {
+        if (strlen($this->sortType) == 0) {
+            return "Sorts - Algorithm";
+        } else {
+            return ucfirst($this->sortType) . " - Sort";
+        }
+    }
 }
