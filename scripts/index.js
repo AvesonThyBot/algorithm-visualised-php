@@ -29,7 +29,7 @@ function randomChars(currentIndex, element, targetString, characterLimit) {
 document.addEventListener("DOMContentLoaded", (event) => {
 	// Call each element
 	titleElement1.textContent = "";
-	randomChars(0, titleElement1, "Sorting", 7);
+	randomChars(0, titleElement1, "Sorting &", 9);
 
 	titleElement2.textContent = "";
 	randomChars(0, titleElement2, "Searching", 9);

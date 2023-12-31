@@ -1,5 +1,6 @@
-<!-- Class for web info -->
-<?php include("../classes/web-info.class.php"); ?>
+<!-- import classes -->
+<?php include("../classes/web-info.class.php");
+include("../classes/search.class.php"); ?>
 
 <!-- Header -->
 <?php

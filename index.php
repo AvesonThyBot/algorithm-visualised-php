@@ -1,6 +1,6 @@
 <!-- import classes -->
-<?php include("classes/web-info.class.php"); ?>
-<?php include("classes/index.class.php"); ?>
+<?php include("classes/web-info.class.php");
+include("classes/index.class.php"); ?>
 
 <!-- Header -->
 <?php

@@ -13,7 +13,7 @@ class LoadContent {
         echo '
         <div class="card bg-dark my-3 border-primary rounded text-white text-end">
             <div class="card-body">
-                <hh4 class="card-text fw-bold fs-1" id="title-sort">Sorting</hh4>
+                <h4 class="card-text fw-bold fs-1" id="title-sort">Sorting</h4>
                 <h4 class="card-text fw-bold fs-1" id="title-search">Searching</h4>
                 <h4 class="card-text fw-bold fs-1" id="title-alg">Algorithm</h4>
                 <h4 class="card-text fw-bold fs-1" id="title-vis">Visualizer</h4>
@@ -45,7 +45,7 @@ class LoadContent {
                 <a href="../pages/sort.php"><button type="button" class="btn btn-outline-success btn-lg px-4 gap-3">Explore All</button></a>
             </div>
         </div>
-    ';
+        ';
     }
 
     // HTML content for search section
