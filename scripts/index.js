@@ -33,10 +33,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 	titleElement2.textContent = "";
 	randomChars(0, titleElement2, "Searching", 9);
-
-	titleElement3.textContent = "";
-	randomChars(0, titleElement3, "Algorithm", 9);
-
-	titleElement4.textContent = "";
-	randomChars(0, titleElement4, "Visualizer", 10);
 });

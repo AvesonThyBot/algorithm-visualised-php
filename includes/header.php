@@ -58,7 +58,7 @@ if (strpos($_SERVER['PHP_SELF'], 'classes/') !== false || strpos($_SERVER['PHP_S
                                 Sorts
                             </a>
                             <ul class="dropdown-menu">
-                                <!-- 3 Options of sort -->
+                                <!-- 3 Options of sorts -->
                                 <li><a class="dropdown-item" href="../pages/sort.php?type=insertion">Insertion Sort</a></li>
                                 <li><a class="dropdown-item" href="../pages/sort.php?type=bubble">Bubble Sort</a></li>
                                 <li><a class="dropdown-item" href="../pages/sort.php?type=merge">Merge Sort</a></li>
@@ -70,13 +70,13 @@ if (strpos($_SERVER['PHP_SELF'], 'classes/') !== false || strpos($_SERVER['PHP_S
                                 <li><a class="dropdown-item" href="../pages/sort.php">Show more...</a></li>
                             </ul>
                         </li>
-                        <!-- Search -->
+                        <!-- Searchs -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle <?php if (isset($navbarActive) && $navbarActive == "search") echo "active"; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Search
+                                Searchs
                             </a>
                             <ul class="dropdown-menu">
-                                <!-- 3 Options of Search -->
+                                <!-- 3 Options of Searchs -->
                                 <li><a class="dropdown-item" href="../pages/search.php?type=linear">Linear Search</a></li>
                                 <li><a class="dropdown-item" href="../pages/search.php?type=binary">Binary Search</a></li>
                                 <li><a class="dropdown-item" href="../pages/search.php?type=ternary">Ternary Search</a></li>
