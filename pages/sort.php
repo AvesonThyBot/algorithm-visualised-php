@@ -3,17 +3,12 @@
 include("../classes/sort.class.php"); ?>
 
 <?php
-// Create Sort Controller Object
-if (isset($_GET["type"])) {
-    $sortController = new Sort($_GET["type"]);
-} else {
-    $sortController = new Sort("null");
-}
-
-
+// Create object
+$sortController = new Sort($_GET['type'] ?? '');
 ?>
 
 <!-- Header -->
+
 <?php
 // setting custom changes to header
 if (strlen(ucfirst($sortController->getCurrentType())) == 0) {

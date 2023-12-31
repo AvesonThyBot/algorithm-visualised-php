@@ -15,6 +15,7 @@ include("includes/header.php"); ?>
     $loadingContent = new LoadContent();
 
     // Intro Section
+    date_default_timezone_set('GMT');
     $loadingContent->getContent("title");
 
     // Sort Section

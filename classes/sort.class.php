@@ -5,9 +5,12 @@ if (strpos($_SERVER['PHP_SELF'], 'classes/') !== false || strpos($_SERVER['PHP_S
     exit();
 }
 
+// Sort Class
 class Sort {
     // Properties
     private $sortType;
+    private $validTypes = ['selection', 'bubble', 'insertion', 'merge', 'quick', 'counting', 'bogo', ''];
+
 
     // Method to get sort algorithm
     public function getAlgorithm($type) {
@@ -40,12 +43,17 @@ class Sort {
         return $this->sortType;
     }
 
+    // Construct Method to assign type
     public function __construct($type) {
-        if ($type !== "null") {
-            $this->sortType = $type; //set sort type
+        // Set Sort Type
+        if ($type && in_array(strtolower($type), $this->validTypes)) {
+            $this->sortType = $type;
+        } else if (isset($type) && !in_array(strtolower($type), $this->validTypes)) {
+            header('Location:../pages/sort.php');
         }
     }
 
+    // Getter Method for $sortType
     public function getCurrentType() {
         return $this->sortType;
     }

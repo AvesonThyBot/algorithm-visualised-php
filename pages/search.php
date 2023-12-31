@@ -2,46 +2,24 @@
 <?php include("../classes/web-info.class.php");
 include("../classes/search.class.php"); ?>
 
+<?php
+// Create Object
+$searchController = new Search($_GET['type'] ?? '');
+?>
+
 <!-- Header -->
 <?php
 // setting custom changes to header
-$title = "Search - Algorithm";
+if (strlen(ucfirst($searchController->getCurrentType())) == 0) {
+    $title = "Searchs - Algorithm";
+} else {
+    $title = ucfirst($searchController->getCurrentType()) . " - Search";
+}
 $navbarActive = "search";
 include("../includes/header.php"); ?>
 
 <!-- Searching -->
-<?php
-// include search class
-include "../classes/search.class.php";
-if (isset($_GET["type"])) {
-    switch (strtolower($_GET["type"])) {
-        case 'linear':
-            // Code for Linear Search
-            break;
-        case 'binary':
-            // Code for Binary Search
-            break;
-        case 'ternary':
-            // Code for Ternary Search
-            break;
-        case 'jump':
-            // Code for Jump Search
-            break;
-        case 'interpolation':
-            // Code for Interpolation Search
-            break;
-        case 'exponential':
-            // Code for Exponential Search
-            break;
-        case 'fibonacci':
-            // Code for Fibonacci Search
-            break;
-        default:
-            // Default code
-            break;
-    }
-}
-?>
+
 
 <!-- Footer -->
 <?php include("../includes/footer.php"); ?>
