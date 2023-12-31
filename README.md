@@ -55,6 +55,13 @@ Contributions are welcome! If you'd like to contribute:
 - Submit pull requests for code improvements or new algorithms.
 - Feel free to suggest any enhancements to the project.
 
+## Credits
+
+Videos used on this project is linked directly through YouTube IFrame, the channels are Linked under:
+
+- Timo Bingmann: https://www.youtube.com/@TimoBingmann (Sorting)
+- GeeksforGekks: https://www.youtube.com/@GeeksforGeeksVideos (Sorting)
+
 ## Proof of Concept
 
 This project is freely available for use by anyone interested in learning and exploring algorithms. It is a proof of concept, demonstrating the power of Object-Oriented Programming in PHP.

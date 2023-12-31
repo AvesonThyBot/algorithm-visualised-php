@@ -13,7 +13,7 @@ $title = $searchController->getTitle();
 $navbarActive = "search";
 include("../includes/header.php"); ?>
 
-<!-- Searching -->
+<!-- Searching Layout -->
 
 
 <!-- Footer -->
