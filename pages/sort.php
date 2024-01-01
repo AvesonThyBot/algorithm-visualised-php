@@ -13,16 +13,8 @@ $title = $sortController->getTitle();
 $navbarActive = "sorts";
 include("../includes/header.php"); ?>
 
-
-
-<!-- Sorting Layout -->
-<main class="text-white bg-dark d-flex flex-column row-gap-3 my-2">
-    <div class="row m-0">
-
-        <?php $sortController->sortInfoContent() ?>
-    </div>
-</main>
-
+<!-- Display content based on Request -->
+<?php $sortController->contentDiplay() ?>
 
 <!-- Footer -->
 <?php include("../includes/footer.php"); ?>
