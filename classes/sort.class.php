@@ -100,31 +100,10 @@ class Sort {
 
     // Method to echo the correct web content based on GET request
     public function contentDiplay() {
-        switch ($this->sortType) {
-            case 'selection':
-                $this->selectionContent();
-                break;
-            case 'bubble':
-                $this->bubbleContent();
-                break;
-            case 'insertion':
-                $this->insertionContent();
-                break;
-            case 'merge':
-                $this->mergeContent();
-                break;
-            case 'quick':
-                $this->quickContent();
-                break;
-            case 'counting':
-                $this->countingContent();
-                break;
-            case 'bogo':
-                $this->bogoContent();
-                break;
-            default:
-                $this->sortInfoContent();
-                break;
+        if (!strlen($this->sortType) == 0) {
+            $this->getAlgorithm($this->sortType);
+        } else {
+            $this->sortInfoContent();
         }
     }
 
@@ -155,36 +134,6 @@ class Sort {
     }
 
     // ---------------------------------------------- ^^ Main Methods ^^ ---------------------------------------------- 
-
-    // Method to display sort for Bogo Sort
-    public function bogoContent() {
-    }
-
-    // Method to display sort for Counting Sort
-    public function countingContent() {
-    }
-
-    // Method to display sort for Quick Sort
-    public function quickContent() {
-    }
-
-    // Method to display sort for Insertion Sort
-    public function insertionContent() {
-    }
-
-    // Method to display sort for Merge Sort
-    public function mergeContent() {
-    }
-
-    // Method to display sort for Bubble Sort
-    public function bubbleContent() {
-    }
-
-    // Method to display sort for Selection Sort
-    public function selectionContent() {
-    }
-
-    // ---------------------------------------------- ^^ Sort Content ^^ ---------------------------------------------- 
 
     // Getter Method for $sortType
     public function getCurrentType() {

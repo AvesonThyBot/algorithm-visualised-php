@@ -13,8 +13,8 @@ $title = $searchController->getTitle();
 $navbarActive = "search";
 include("../includes/header.php"); ?>
 
-<!-- Searching Layout -->
-
+<!-- Display content based on Request -->
+<?php $searchController->contentDiplay() ?>
 
 <!-- Footer -->
 <?php include("../includes/footer.php"); ?>
