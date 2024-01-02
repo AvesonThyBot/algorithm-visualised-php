@@ -10,7 +10,58 @@ class Search {
     // Properties
     private $searchType;
     private $validTypes = ['linear', 'binary', 'ternary', 'jump', 'interpolation', 'exponential', 'fibonacci', ''];
-    private $searchInfo = [];
+    private $searchInfo = [
+        0 => [
+            'title' => 'Linear Search',
+            'description' => 'Simple search algorithm that finds the position of a target value within a list.',
+            'pros' => 'Straightforward and applicable to various scenarios.',
+            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/5SEysJAarbo?si=lwPJksaEX9eTLpJH"></iframe>',
+            'href' => '../pages/search.php?type=linear'
+        ],
+        1 => [
+            'title' => 'Binary Search',
+            'description' => 'Efficient search algorithm that finds the position of a target value within a sorted array.',
+            'pros' => 'Logarithmic time complexity, suitable for large datasets.',
+            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/MFhxShGxHWc?si=gFyk3tN3Ij1lspfT"></iframe>',
+            'href' => '../pages/search.php?type=binary'
+        ],
+        2 => [
+            'title' => 'Ternary Search',
+            'description' => 'Search algorithm that efficiently narrows down the search space in each step.',
+            'pros' => 'Divides the search space into three parts, reducing comparisons.',
+            'video' => '<iframe width="560" height="315"src="https://www.youtube.com/embed/o3HPRpbGlbI?si=JH0BtF3v3pzkvriB"></iframe>',
+            'href' => '../pages/search.php?type=ternary'
+        ],
+        3 => [
+            'title' => 'Jump Search',
+            'description' => 'Algorithm for searching sorted arrays by taking fixed steps forward or backward.',
+            'pros' => 'Effective for large datasets, combines advantages of linear and binary search.',
+            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/63kS6ZkMpkA?si=l6XhYUrLrxLH5g2L"></iframe>',
+            'href' => '../pages/search.php?type=jump'
+        ],
+        4 => [
+            'title' => 'Interpolation Search',
+            'description' => 'Search algorithm that estimates the position of the target value based on its value.',
+            'pros' => 'Effective for uniformly distributed datasets, faster than binary search.',
+            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/YSVS5GG1JuI?si=G4mIHdYLjYccW-ch"></iframe>',
+            'href' => '../pages/search.php?type=interpolation'
+        ],
+        5 => [
+            'title' => 'Exponential Search',
+            'description' => 'Algorithm that searches for an element in a sorted, infinite-sized array.',
+            'pros' => 'Logarithmic time complexity, efficient for unbounded arrays.',
+            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/BDVYtuWXgXE?si=ZLCt62F2ym5I6ZDc"></iframe>',
+            'href' => '../pages/search.php?type=exponential'
+        ],
+        6 => [
+            'title' => 'Fibonacci Search',
+            'description' => 'Search algorithm based on the Fibonacci sequence to divide the array into two parts.',
+            'pros' => 'Logarithmic time complexity, efficient for sorted arrays.',
+            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/GAafWFRGP7k?si=jjBy2oNjvojUsR7q" ></iframe>',
+            'href' => '../pages/search.php?type=fibonacci'
+        ],
+    ];
+
 
     // ---------------------------------------------- ^^ Properties ^^ ---------------------------------------------- 
 
@@ -72,11 +123,11 @@ class Search {
         // Loop each search type info
         foreach ($this->searchInfo as $search) {
             echo '
-            <div class="col-6 ' . ($search['title'] !== 'Bogo Sort' ? 'my-2' : 'mx-auto my-2') . '">
+            <div class="col-6 ' . ($search['title'] !== 'Fibonacci Search' ? 'my-2' : 'mx-auto my-2') . '">
                 <div class="card bg-primary-subtle text-center">
                     <div class="card-body">
                         <h5 class="card-title">' . $search['title'] . '</h5>
-                        <p class="card-text text-start">' . $search['description'] . '</p>
+                        <p class="card-text text-start">' . $search['description'] . '<br><strong>Pros: </strong>' . $search['pros'] . '<br><strong>Video example:</strong></p>
                         ' . $search['video'] . '
                     </div>
                     <div class="card-footer text-body-secondary">
@@ -91,7 +142,6 @@ class Search {
     }
 
     // ---------------------------------------------- ^^ Main Methods ^^ ---------------------------------------------- 
-
 
     // Getter Method for $searchType
     public function getCurrentType() {

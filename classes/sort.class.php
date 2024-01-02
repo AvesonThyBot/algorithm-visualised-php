@@ -13,47 +13,55 @@ class Sort {
     private $sortInfo = [
         0 => [
             'title' => 'Selection Sort',
-            'description' => 'Simple comparison-based sorting algorithm. Selects the smallest element and swaps it with the first element. The process is repeated until the entire list is sorted.<br>Video example:',
-            'video' => '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/92BfuxHn2XE?si=G0On7QBReMv3o4Ug" title="YouTube video player"></iframe>',
+            'description' => 'Simple comparison-based sorting algorithm. Selects the smallest element and swaps it with the first element. The process is repeated until the entire list is sorted.',
+            'pros' => 'Simple, in-place, and stable.',
+            'video' => '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/92BfuxHn2XE?si=G0On7QBReMv3o4Ug"></iframe>',
             'href' => '../pages/sort.php?type=selection'
         ],
         1 => [
             'title' => 'Bubble Sort',
-            'description' => 'Repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.<br>Video example:',
-            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/Cq7SMsQBEUw?si=jDpdOBJntcyZoteQ" title="YouTube video player"></iframe>',
+            'description' => 'Repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.',
+            'pros' => 'Simple, stable.',
+            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/Cq7SMsQBEUw?si=jDpdOBJntcyZoteQ"></iframe>',
             'href' => '../pages/sort.php?type=bubble'
         ],
         2 => [
             'title' => 'Insertion Sort',
-            'description' => 'Builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.<br>Video example:',
-            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/Cq7SMsQBEUw?si=UOIq6yAyu3ICPPC1" title="YouTube video player"></iframe>',
+            'description' => 'Builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.',
+            'pros' => 'Simple, adaptive, and stable.',
+            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/Cq7SMsQBEUw?si=UOIq6yAyu3ICPPC1"></iframe>',
             'href' => '../pages/sort.php?type=insertion'
         ],
         3 => [
             'title' => 'Merge Sort',
-            'description' => 'Divide and conquer algorithm. It divides input array into two halves, calls itself for the two halves, and then merges the two sorted halves.<br>Video example:',
-            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/ZRPoEKHXTJg?si=iVTpvTCYNT3PTKj_" title="YouTube video player"></iframe>',
+            'description' => 'Divide and conquer algorithm. It divides input array into two halves, calls itself for the two halves, and then merges the two sorted halves.',
+            'pros' => 'Stable, works well on large datasets.',
+            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/ZRPoEKHXTJg?si=iVTpvTCYNT3PTKj_"></iframe>',
             'href' => '../pages/sort.php?type=merge'
         ],
         4 => [
             'title' => 'Quick Sort',
-            'description' => 'Divide and conquer algorithm with a pivot element. Elements less than the pivot go on one side, and elements greater than the pivot go on the other side.<br>Video example:',
-            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/8hEyhs3OV1w?si=TmMcfU7qIEv4UyEF" title="YouTube video player"></iframe>',
+            'description' => 'Divide and conquer algorithm with a pivot element. Elements less than the pivot go on one side, and elements greater than the pivot go on the other side.',
+            'pros' => 'Fast on average, in-place.',
+            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/8hEyhs3OV1w?si=TmMcfU7qIEv4UyEF"></iframe>',
             'href' => '../pages/sort.php?type=quick'
         ],
         5 => [
             'title' => 'Counting Sort',
-            'description' => 'Sorting algorithm for integers without comparison. It counts the number of occurrences of each element and stores it in an auxiliary array.<br>Video example:',
-            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/7zuGmKfUt7s?si=CSxdDEPhysTC9-I7" title="YouTube video player"></iframe>',
+            'description' => 'Sorting algorithm for integers without comparison. It counts the number of occurrences of each element and stores it in an auxiliary array.',
+            'pros' => 'Efficient for integers.',
+            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/7zuGmKfUt7s?si=CSxdDEPhysTC9-I7"></iframe>',
             'href' => '../pages/sort.php?type=counting'
         ],
         6 => [
             'title' => 'Bogo Sort',
-            'description' => 'A highly ineffective algorithm based on generating permutations. It randomly permutes the input until it is sorted.<br>Video example:',
-            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/DaPJkYo2quc?si=Q_mB1OKd_MmLpW72" title="YouTube video player"></iframe>',
+            'description' => 'A highly ineffective algorithm based on generating permutations. It randomly permutes the input until it is sorted.',
+            'pros' => 'None (not practical).',
+            'video' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/DaPJkYo2quc?si=Q_mB1OKd_MmLpW72"></iframe>',
             'href' => '../pages/sort.php?type=bogo'
         ],
     ];
+
 
     // ---------------------------------------------- ^^ Properties ^^ ---------------------------------------------- 
 
@@ -119,7 +127,7 @@ class Sort {
             <div class="card bg-primary-subtle text-center">
                 <div class="card-body">
                     <h5 class="card-title">' . $sort['title'] . '</h5>
-                    <p class="card-text text-start">' . $sort['description'] . '</p>
+                    <p class="card-text text-start">' . $sort['description'] . '<br><strong>Pros: </strong>' . $sort['pros'] . '<br><strong>Video example:</strong></p>
                     ' . $sort['video'] . '
                 </div>
                 <div class="card-footer text-body-secondary">

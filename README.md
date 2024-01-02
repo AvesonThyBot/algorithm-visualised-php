@@ -60,7 +60,13 @@ Contributions are welcome! If you'd like to contribute:
 Videos used on this project is linked directly through YouTube IFrame, the channels are Linked under:
 
 - Timo Bingmann: https://www.youtube.com/@TimoBingmann (Sorting)
-- GeeksforGekks: https://www.youtube.com/@GeeksforGeeksVideos (Sorting)
+- GeeksforGekks: https://www.youtube.com/@GeeksforGeeksVideos (Sorting & Search)
+- Computer Science Tutorials: https://www.youtube.com/@ComputerScienceTutorials (Search)
+- Fireship: https://www.youtube.com/@Fireship (Search)
+- Quoc Dat Phung: https://www.youtube.com/@QuocDatPhung (Search)
+- Bro Code: https://www.youtube.com/@BroCodez (Search)
+- Techdose: https://www.youtube.com/@techdose4u (Search)
+- Oscar Veliz: https://www.youtube.com/@OscarVeliz (Search)
 
 ## Proof of Concept
 
