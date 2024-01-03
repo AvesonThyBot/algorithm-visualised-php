@@ -17,4 +17,6 @@ include("../includes/header.php"); ?>
 <?php $sortController->contentDiplay() ?>
 
 <!-- Footer -->
-<?php include("../includes/footer.php"); ?>
+<?php
+$extraScript = "/scripts/liveFeedback.js";
+include("../includes/footer.php"); ?>

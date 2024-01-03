@@ -9,7 +9,7 @@ if (strpos($_SERVER['PHP_SELF'], 'classes/') !== false || strpos($_SERVER['PHP_S
 class Search {
     // Properties
     private $searchType;
-    private $validTypes = ['linear', 'binary', 'ternary', 'jump', 'interpolation', 'exponential', 'fibonacci', ''];
+    private $validTypes = ['linear', 'binary', 'ternary', 'jump', 'interpolation', 'exponential', 'fibonacci', '', 'result'];
     private $searchInfo = [
         0 => [
             'title' => 'Linear Search',
@@ -62,43 +62,7 @@ class Search {
         ],
     ];
 
-
     // ---------------------------------------------- ^^ Properties ^^ ---------------------------------------------- 
-
-    // Method to get Search algorithm
-    public function getAlgorithm($type) {
-        switch ($type) {
-            case 'linear':
-                // Code for Linear Search
-                break;
-            case 'binary':
-                // Code for Binary Search
-                break;
-            case 'ternary':
-                // Code for Ternary Search
-                break;
-            case 'jump':
-                // Code for Jump Search
-                break;
-            case 'interpolation':
-                // Code for Interpolation Search
-                break;
-            case 'exponential':
-                // Code for Exponential Search
-                break;
-            case 'fibonacci':
-                // Code for Fibonacci Search
-                break;
-            default:
-                // Default code
-                break;
-        }
-        return $this->searchType;
-    }
-
-    // Method to display Algoritm Content
-    public function searchAlgorithmContent() {
-    }
 
     // Construct Method to assign type
     public function __construct($type) {
@@ -112,7 +76,9 @@ class Search {
 
     // Method to echo the correct web content based on GET request
     public function contentDiplay() {
-        if (!strlen($this->searchType) == 0) {
+        if ($this->searchType == 'result') {
+            $this->displayResult();
+        } else if (!strlen($this->searchType) == 0) {
             $this->searchAlgorithmContent();
             $this->getAlgorithm($this->searchType);
         } else {
@@ -146,6 +112,98 @@ class Search {
         echo '</div></main>';
     }
 
+    // Method to display Algoritm Content
+    public function searchAlgorithmContent() {
+        echo '<div class="container-fluid text-white my-3">
+        <!--Display Box -->
+        <div class="container-xl border border-primary">
+            <!-- Title -->
+            <h2 class="text-center">' . ucfirst($this->getCurrentType()) . '</h2>
+            <br>
+    
+            <!-- Data -->
+            <div class="container-xl border border-primary p-2 user-select-text text-center" id="dataDisplay">';
+
+        for ($height = 5; $height <= 500; $height += 5) {
+            echo '<span class="bg-white d-inline-block" style="width: 10px; height: ' . $height . 'px;"></span>';
+        }
+
+        echo '<h5>' . ucfirst($this->getCurrentType()) . ' Search for data between 1 to 100.</h5>
+            </div>
+            <br>
+        </div>
+    
+        <!-- Options -->
+        <div class="container-xl border border-primary">
+            <br>
+            <!-- Input Form for Data entry & Settings -->
+            <form class="col g-3 needs-validation text-end" method="POST" novalidate>
+    
+                <!-- Select Type of Data Entry -->
+                <div class="select-data-entry container">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" checked="checked" name="dataEntry" id="defaultData" value="default">
+                        <label class="form-check-label" for="defaultData">Default Data (1-100)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="dataEntry" id="customData" value="custom">
+                        <label class="form-check-label" for="customData">Custom Data</label>
+                    </div>
+                </div>
+    
+                <!-- Custom Entry Input Box -->
+                <div class="form-floating mb-3 text-black col-sm-6 ms-auto d-none" id="customInput">
+                    <input type="text" class="form-control" id="customNumber" placeholder="1">
+                    <label for="floatingInput">Enter Number between 0-100 (Use comma to separate multiple)</label>
+                    <!-- Invalid Feedback -->
+                    <div class="invalid-feedback text-white">
+                        Invalid input!
+                    </div>
+                </div>
+    
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary my-2">
+                    Try Now!
+                </button>
+            </form>
+        </div>
+    </div>';
+    }
+
+    // Method to get Search algorithm
+    public function getAlgorithm($type) {
+        switch ($type) {
+            case 'linear':
+                // Code for Linear Search
+                break;
+            case 'binary':
+                // Code for Binary Search
+                break;
+            case 'ternary':
+                // Code for Ternary Search
+                break;
+            case 'jump':
+                // Code for Jump Search
+                break;
+            case 'interpolation':
+                // Code for Interpolation Search
+                break;
+            case 'exponential':
+                // Code for Exponential Search
+                break;
+            case 'fibonacci':
+                // Code for Fibonacci Search
+                break;
+            default:
+                // Default code
+                break;
+        }
+        return $this->searchType;
+    }
+
+    // Method to display result
+    public function displayResult() {
+    }
     // ---------------------------------------------- ^^ Main Methods ^^ ---------------------------------------------- 
 
     // Getter Method for $searchType

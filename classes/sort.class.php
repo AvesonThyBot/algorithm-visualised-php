@@ -9,7 +9,7 @@ if (strpos($_SERVER['PHP_SELF'], 'classes/') !== false || strpos($_SERVER['PHP_S
 class Sort {
     // Properties
     private $sortType;
-    private $validTypes = ['selection', 'bubble', 'insertion', 'merge', 'quick', 'counting', 'bogo', ''];
+    private $validTypes = ['selection', 'bubble', 'insertion', 'merge', 'quick', 'counting', 'bogo', '', 'result'];
     private $sortInfo = [
         0 => [
             'title' => 'Selection Sort',
@@ -62,8 +62,59 @@ class Sort {
         ],
     ];
 
-
     // ---------------------------------------------- ^^ Properties ^^ ---------------------------------------------- 
+
+    // Construct Method to assign type
+    public function __construct($type) {
+        // Set Sort Type
+        if ($type && in_array(strtolower($type), $this->validTypes)) {
+            $this->sortType = $type;
+        } else if (isset($type) && !in_array(strtolower($type), $this->validTypes)) {
+            header('Location:../pages/sort.php');
+        }
+    }
+
+    // Method to echo the correct web content based on GET request
+    public function contentDiplay() {
+        if ($this->sortType == 'result') {
+            $this->sortAlgorithmContent();
+            $this->displayResult();
+        } else if (!strlen($this->sortType) == 0) {
+            $this->getAlgorithm($this->sortType);
+        } else {
+            $this->sortInfoContent();
+        }
+    }
+
+    // Method to echo the sorting type information
+    public function sortInfoContent() {
+        // Echo opening tags
+        echo '<main class="text-white bg-dark d-flex flex-column row-gap-3 my-2">
+        <div class="row m-0">';
+        // Loop each sort type info
+        foreach ($this->sortInfo as $sort) {
+            echo '
+        <div class="col-6 ' . ($sort['title'] !== 'Bogo Sort' ? 'my-2' : 'mx-auto my-2') . '">
+            <div class="card bg-primary-subtle text-center">
+                <div class="card-body">
+                    <h5 class="card-title">' . $sort['title'] . '</h5>
+                    <p class="card-text text-start">' . $sort['description'] . '<br><strong>Pros: </strong>' . $sort['pros'] . '<br><strong>Video example:</strong></p>
+                    ' . $sort['video'] . '
+                </div>
+                <div class="card-footer text-body-secondary">
+                    <a href="' . $sort['href'] . '" class="btn btn-outline-primary">Try now</a>
+                </div>
+            </div>
+        </div>
+        ';
+        }
+        // Echo closing tags
+        echo '</div></main>';
+    }
+
+    // Method to display Algoritm Content
+    public function sortAlgorithmContent() {
+    }
 
     // Method to get sort algorithm
     public function getAlgorithm($type) {
@@ -96,49 +147,8 @@ class Sort {
         return $this->sortType;
     }
 
-    // Construct Method to assign type
-    public function __construct($type) {
-        // Set Sort Type
-        if ($type && in_array(strtolower($type), $this->validTypes)) {
-            $this->sortType = $type;
-        } else if (isset($type) && !in_array(strtolower($type), $this->validTypes)) {
-            header('Location:../pages/sort.php');
-        }
-    }
-
-    // Method to echo the correct web content based on GET request
-    public function contentDiplay() {
-        if (!strlen($this->sortType) == 0) {
-            $this->getAlgorithm($this->sortType);
-        } else {
-            $this->sortInfoContent();
-        }
-    }
-
-    // Method to echo the sorting type information
-    public function sortInfoContent() {
-        // Echo opening tags
-        echo '<main class="text-white bg-dark d-flex flex-column row-gap-3 my-2">
-        <div class="row m-0">';
-        // Loop each sort type info
-        foreach ($this->sortInfo as $sort) {
-            echo '
-        <div class="col-6 ' . ($sort['title'] !== 'Bogo Sort' ? 'my-2' : 'mx-auto my-2') . '">
-            <div class="card bg-primary-subtle text-center">
-                <div class="card-body">
-                    <h5 class="card-title">' . $sort['title'] . '</h5>
-                    <p class="card-text text-start">' . $sort['description'] . '<br><strong>Pros: </strong>' . $sort['pros'] . '<br><strong>Video example:</strong></p>
-                    ' . $sort['video'] . '
-                </div>
-                <div class="card-footer text-body-secondary">
-                    <a href="' . $sort['href'] . '" class="btn btn-outline-primary">Try now</a>
-                </div>
-            </div>
-        </div>
-        ';
-        }
-        // Echo closing tags
-        echo '</div></main>';
+    // Method to display result
+    public function displayResult() {
     }
 
     // ---------------------------------------------- ^^ Main Methods ^^ ---------------------------------------------- 
