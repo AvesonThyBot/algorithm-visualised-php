@@ -25,10 +25,15 @@ include("../includes/header.php"); ?>
         <br>
 
         <!-- Data -->
-        <div class="container-xl border border-primary">
-            <span class="user-select-none bg-white">a</span>
-            <span class="user-select-none bg-white" style="min-height: 10px !important ;">a</span>
+        <div class="container-xl border border-primary p-2 user-select-text text-center">
+            <?php
+            for ($height = 5; $height <= 500; $height += 5) {
+                echo '<span class="bg-white d-inline-block" style="width: 10px; height: ' . $height . 'px;"></span>';
+            }
+            ?>
+            <h5><?php echo ucfirst($searchController->getCurrentType()) ?> Search for data between 1 to 100.</h5>
         </div>
+
         <br>
     </div>
 
@@ -41,7 +46,7 @@ include("../includes/header.php"); ?>
             <!-- Select Type of Data Entry -->
             <div class="select-data-entry container">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="dataEntry" id="defaultData" value="default">
+                    <input class="form-check-input" type="radio" checked="checked" name="dataEntry" id="defaultData" value="default">
                     <label class="form-check-label" for="defaultData">Default Data (1-100)</label>
                 </div>
                 <div class="form-check form-check-inline">
