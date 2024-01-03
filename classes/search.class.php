@@ -96,6 +96,10 @@ class Search {
         return $this->searchType;
     }
 
+    // Method to display Algoritm Content
+    public function searchAlgorithmContent() {
+    }
+
     // Construct Method to assign type
     public function __construct($type) {
         // Set Search Type
@@ -109,6 +113,7 @@ class Search {
     // Method to echo the correct web content based on GET request
     public function contentDiplay() {
         if (!strlen($this->searchType) == 0) {
+            $this->searchAlgorithmContent();
             $this->getAlgorithm($this->searchType);
         } else {
             $this->searchInfoContent();
