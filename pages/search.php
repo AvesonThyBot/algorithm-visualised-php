@@ -18,5 +18,5 @@ include("../includes/header.php"); ?>
 
 <!-- Footer -->
 <?php
-$extraScript = "/scripts/liveFeedback.js";
+$extraScript = "/scripts/app.js";
 include("../includes/footer.php"); ?>

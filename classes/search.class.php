@@ -145,7 +145,7 @@ class Search {
         </div>
 
         <!-- Options -->
-        <div class="container-xl border border-primarythis">
+        <div class="container-xl border border-primary">
             <br>
             <!-- Input Form for Data entry & Settings -->
             <form class="col g-3 needs-validation text-end" novalidate>
