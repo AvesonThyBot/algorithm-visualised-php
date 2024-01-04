@@ -133,13 +133,11 @@ class Search {
                 ';
 
         for ($height = 0; $height < 100; $height++) {
-            $isEndOfRow = ($height + 1) % 25 == 0;
             echo '<span class="bg-white h3 text-dark d-inline-block mx-1 user-select-none" style="width: calc(100% / 25 - 8px);">' . ($height + 1) . '</span>';
-            echo $isEndOfRow ? '<br>' : '';
         }
 
         echo '
-                <h5 class="mt-2">' . ucfirst($this->getCurrentType()) . ' Search for data between 1 to 100.</h5>
+                <h5 class="mt-2" id="heading">' . ucfirst($this->getCurrentType()) . ' Search for data between 1 to 100.</h5>
             </div>
             <br>
         </div>
@@ -149,6 +147,11 @@ class Search {
             <br>
             <!-- Input Form for Data entry & Settings -->
             <form class="col g-3 needs-validation text-end" novalidate>
+
+                <!-- Randomise Data-->
+                <button type="button" class="btn btn-outline-primary text-start float-start" id="randomiseBtn">
+                    Randomise
+                </button>
 
                 <!-- Select Type of Data Entry -->
                 <div class="select-data-entry container">

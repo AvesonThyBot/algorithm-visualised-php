@@ -134,7 +134,7 @@ class Sort {
             echo '<span class="bg-white d-inline-block" style="width: 10px; height: ' . $height . 'px;"></span>';
         }
 
-        echo '<h5>' . ucfirst($this->getCurrentType()) . ' Sort for data between 1 to 100.</h5>
+        echo '<h5 class="mt-2" id="heading">' . ucfirst($this->getCurrentType()) . ' Sort for data between 1 to 100.</h5>
             </div>
             <br>
         </div>
@@ -144,6 +144,11 @@ class Sort {
             <br>
             <!-- Input Form for Data entry & Settings -->
             <form class="col g-3 needs-validation text-end" method="POST" novalidate>
+
+                <!-- Randomise Data-->
+                <button type="button" class="btn btn-outline-primary text-start float-start" id="randomiseBtn">
+                    Randomise
+                </button>
     
                 <!-- Select Type of Data Entry -->
                 <div class="select-data-entry container">
