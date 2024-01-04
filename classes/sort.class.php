@@ -109,7 +109,13 @@ class Sort {
         ';
         }
         // Echo closing tags
-        echo '</div></main>';
+        echo '</div>' . $this->getLastUpdate() . '</main>';
+    }
+
+    // Method to get last updated date/time
+    private function getLastUpdate() {
+        date_default_timezone_set('GMT');
+        return '<h4 class="text-start fs-5 mx-1">' . "Last Updated: " . date("jS F, g:ia", filemtime("sort.php")) . " UTC." . '</h4>';
     }
 
     // Method to display Algoritm Content
@@ -166,8 +172,9 @@ class Sort {
                     Try Now!
                 </button>
             </form>
+            ' . $this->getLastUpdate() . '
         </div>
-    </div>';
+        </div>';
     }
 
     // Method to get sort algorithm

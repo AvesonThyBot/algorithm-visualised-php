@@ -16,8 +16,6 @@ include("../includes/header.php"); ?>
 <!-- Display content based on Request -->
 <?php $searchController->contentDiplay() ?>
 
-
-
 <!-- Footer -->
 <?php
 $extraScript = "/scripts/liveFeedback.js";
