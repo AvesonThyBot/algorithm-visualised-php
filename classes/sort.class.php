@@ -154,7 +154,7 @@ class Sort {
                 <!-- Custom Entry Input Box -->
                 <div class="form-floating mb-3 text-black col-sm-6 ms-auto d-none" id="customInput">
                     <input type="text" class="form-control" id="customNumber" placeholder="1">
-                    <label for="floatingInput">Enter Number between 0-100 (Use comma to separate multiple)</label>
+                    <label for="floatingInput">Enter 10-100 Positive Numbers (Use comma to seperate multiple)</label>
                     <!-- Invalid Feedback -->
                     <div class="invalid-feedback text-white">
                         Invalid input!
