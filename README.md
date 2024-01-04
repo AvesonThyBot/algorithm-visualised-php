@@ -77,3 +77,11 @@ This project is freely available for use by anyone interested in learning and ex
 This project is maintained by [AvesonThyBot](https://github.com/avesonthybot) on GitHub.
 
 Feel free to explore, contribute, and use this project for educational purposes.
+
+## To Do
+
+- Live sanatisation of data entry
+- Live Error message for invalid data entry
+- Add algorithm for searches & sorts
+- Design Layout and functionalise the results page
+- Get feedback from 3 people

@@ -115,7 +115,7 @@ class Sort {
     // Method to get last updated date/time
     private function getLastUpdate() {
         date_default_timezone_set('GMT');
-        return '<h4 class="text-start fs-5 mx-1">' . "Last Updated: " . date("jS F, g:ia", filemtime("sort.php")) . " UTC." . '</h4>';
+        return '<h4 class="fw-light text-start fs-5 mx-1">' . "Last Updated: " . date("jS F, g:ia", filemtime("sort.php")) . " UTC." . '</h4>';
     }
 
     // Method to display Algoritm Content
