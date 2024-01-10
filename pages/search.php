@@ -20,3 +20,4 @@ include("../includes/header.php"); ?>
 <?php
 $extraScript = "/scripts/app.js";
 include("../includes/footer.php"); ?>
+

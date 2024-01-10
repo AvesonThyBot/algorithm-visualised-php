@@ -146,7 +146,7 @@ class Search {
         <div class="container-xl border border-primary">
             <br>
             <!-- Input Form for Data entry & Settings -->
-            <form class="col g-3 needs-validation text-end" novalidate>
+            <form class="col g-3 needs-validation text-end" method="POST" action="../pages/search.php?type=result" novalidate >
 
                 <!-- Randomise Data-->
                 <button type="button" class="btn btn-outline-primary text-start float-start" id="randomiseBtn">
@@ -157,11 +157,11 @@ class Search {
                 <div class="select-data-entry container">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" checked="checked" name="dataEntry" id="defaultData" value="default">
-                        <label class="form-check-label" for="defaultData">Default Data (1-100)</label>
+                        <label class="form-check-label user-select-none" for="defaultData">Default Data (1-100)</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="dataEntry" id="customData" value="custom">
-                        <label class="form-check-label" for="customData">Custom Data</label>
+                        <label class="form-check-label user-select-none" for="customData">Custom Data</label>
                     </div>
                 </div>
 
@@ -219,6 +219,7 @@ class Search {
 
     // Method to display result
     public function displayResult() {
+        echo "Hi";
     }
     // ---------------------------------------------- ^^ Main Methods ^^ ---------------------------------------------- 
 

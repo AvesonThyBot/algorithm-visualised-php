@@ -88,10 +88,6 @@ class Sort {
 
     // Method to echo the sorting type information
     public function sortInfoContent() {
-        // Echo opening tags
-        echo '<main class="text-white bg-dark d-flex flex-column row-gap-3 my-2">
-        <div class="row m-0">';
-        // Loop each sort type info
         foreach ($this->sortInfo as $sort) {
             echo '
         <div class="col-6 ' . ($sort['title'] !== 'Bogo Sort' ? 'my-2' : 'mx-auto my-2') . '">
@@ -108,14 +104,6 @@ class Sort {
         </div>
         ';
         }
-        // Echo closing tags
-        echo '</div>' . $this->getLastUpdate() . '</main>';
-    }
-
-    // Method to get last updated date/time
-    private function getLastUpdate() {
-        date_default_timezone_set('GMT');
-        return '<h4 class="fw-light text-start fs-5 mx-1">' . "Last Updated: " . date("jS F, g:ia", filemtime("sort.php")) . " UTC." . '</h4>';
     }
 
     // Method to display Algoritm Content
@@ -143,7 +131,7 @@ class Sort {
         <div class="container-xl border border-primary">
             <br>
             <!-- Input Form for Data entry & Settings -->
-            <form class="col g-3 needs-validation text-end" method="POST" novalidate>
+            <form class="col g-3 needs-validation text-end" method="POST" action="../pages/sort.php?type=result" novalidate>
 
                 <!-- Randomise Data-->
                 <button type="button" class="btn btn-outline-primary text-start float-start" id="randomiseBtn">
@@ -154,11 +142,11 @@ class Sort {
                 <div class="select-data-entry container">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" checked="checked" name="dataEntry" id="defaultData" value="default">
-                        <label class="form-check-label" for="defaultData">Default Data (1-100)</label>
+                        <label class="form-check-label user-select-none" for="defaultData">Default Data (1-100)</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="dataEntry" id="customData" value="custom">
-                        <label class="form-check-label" for="customData">Custom Data</label>
+                        <label class="form-check-label user-select-none" for="customData">Custom Data</label>
                     </div>
                 </div>
     
@@ -177,7 +165,7 @@ class Sort {
                     Try Now!
                 </button>
             </form>
-            ' . $this->getLastUpdate() . '
+            <h4 class="fw-light text-start fs-5 mx-1">' . date("jS F, g:ia", filemtime("sort.php")) . '</h4>
         </div>
         </div>';
     }
@@ -215,6 +203,7 @@ class Sort {
 
     // Method to display result
     public function displayResult() {
+        echo "Hi";
     }
 
     // ---------------------------------------------- ^^ Main Methods ^^ ---------------------------------------------- 
@@ -234,7 +223,11 @@ class Sort {
             return ucfirst($this->sortType) . " - Sort";
         }
     }
-
+    // Method to get last updated date/time
+    public function getLastUpdate() {
+        date_default_timezone_set('GMT');
+        echo date("jS F, g:ia", filemtime("sort.php"));
+    }
     // ---------------------------------------------- ^^ Getters & Setters ^^ ---------------------------------------------- 
 
 }

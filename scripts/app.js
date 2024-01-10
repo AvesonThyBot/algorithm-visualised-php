@@ -8,10 +8,11 @@ const heading = document.body.querySelector("#heading");
 // On Click EventListener for showing appropriate div
 document.body.querySelectorAll(".form-check").forEach((element) => {
 	element.onclick = () => {
-		// Toggle Input box
-		customInput.classList.toggle("d-none");
-		// Toggle Data Display & Randomise button
-		document.body.querySelector("#dataDisplay").classList.toggle("d-none"), document.body.querySelector("#randomiseBtn").classList.toggle("d-none");
+		customData.checked
+			? // Toggle for custom data
+			  (customInput.classList.remove("d-none"), document.body.querySelector("#dataDisplay").classList.add("d-none"), document.body.querySelector("#randomiseBtn").classList.add("d-none"))
+			: // Toggle for default data
+			  (customInput.classList.add("d-none"), document.body.querySelector("#dataDisplay").classList.remove("d-none"), document.body.querySelector("#randomiseBtn").classList.remove("d-none"));
 	};
 });
 
