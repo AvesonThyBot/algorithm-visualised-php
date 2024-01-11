@@ -8,6 +8,7 @@ if (strpos($_SERVER['PHP_SELF'], 'classes/') !== false || strpos($_SERVER['PHP_S
 // Search Class
 class Search {
     // Properties
+    private $currentDisplay;
     private $searchType;
     private $validTypes = ['linear', 'binary', 'ternary', 'jump', 'interpolation', 'exponential', 'fibonacci', '', 'result'];
     private $searchInfo = [
@@ -72,26 +73,25 @@ class Search {
         } else if (isset($type) && !in_array(strtolower($type), $this->validTypes)) {
             header('Location:../pages/search.php');
         }
+
+        // Content Display
+        $this->contentDiplay();
     }
 
     // Method to echo the correct web content based on GET request
     public function contentDiplay() {
         if ($this->searchType == 'result') {
-            $this->displayResult();
+            $this->currentDisplay == 'result';
         } else if (!strlen($this->searchType) == 0) {
-            $this->searchAlgorithmContent();
+            $this->currentDisplay = 'specific';
             $this->getAlgorithm($this->searchType);
         } else {
-            $this->searchInfoContent();
+            $this->currentDisplay = 'all';
         }
     }
 
     // Method to echo the sorting type information
     public function searchInfoContent() {
-        // Echo opening tags
-        echo '<main class="text-white bg-dark d-flex flex-column row-gap-3 my-2">
-            <div class="row m-0">';
-        // Loop each search type info
         foreach ($this->searchInfo as $search) {
             echo '
             <div class="col-6 ' . ($search['title'] !== 'Fibonacci Search' ? 'my-2' : 'mx-auto my-2') . '">
@@ -108,82 +108,13 @@ class Search {
             </div>
             ';
         }
-        // Echo closing tags
-        echo '</div>' . $this->getLastUpdate() . '</main>';
     }
 
-    // Method to get last updated date/time
-    private function getLastUpdate() {
-        date_default_timezone_set('GMT');
-        return '<h4 class="fw-light text-start fs-5 mx-1">' . "Last Updated: " . date("jS F, g:ia", filemtime("sort.php")) . " UTC." . '</h4>';
-    }
-
-    // Method to display Algoritm Content
-    public function searchAlgorithmContent() {
-        echo '
-        <div class="container-fluid text-white my-5">
-            <!-- Display Box -->
-            <div class="container-xl border border-primary">
-                <!-- Title -->
-                <h2 class="text-center">' . ucfirst($this->getCurrentType()) . '</h2>
-                <br>
-
-            <!-- Data -->
-            <div class="container-xl border border-primary py-2 user-select-text text-center" id="dataDisplay">
-                ';
-
+    // Method to display Algoritm display Content
+    public function algorithmDataDisplay() {
         for ($height = 0; $height < 100; $height++) {
             echo '<span class="bg-white h3 text-dark d-inline-block mx-1 user-select-none" style="width: calc(100% / 25 - 8px);">' . ($height + 1) . '</span>';
         }
-
-        echo '
-                <h5 class="mt-2" id="heading">' . ucfirst($this->getCurrentType()) . ' Search for data between 1 to 100.</h5>
-            </div>
-            <br>
-        </div>
-
-        <!-- Options -->
-        <div class="container-xl border border-primary">
-            <br>
-            <!-- Input Form for Data entry & Settings -->
-            <form class="col g-3 needs-validation text-end" method="POST" action="../pages/search.php?type=result" novalidate >
-
-                <!-- Randomise Data-->
-                <button type="button" class="btn btn-outline-primary text-start float-start" id="randomiseBtn">
-                    Randomise
-                </button>
-
-                <!-- Select Type of Data Entry -->
-                <div class="select-data-entry container">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" checked="checked" name="dataEntry" id="defaultData" value="default">
-                        <label class="form-check-label user-select-none" for="defaultData">Default Data (1-100)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="dataEntry" id="customData" value="custom">
-                        <label class="form-check-label user-select-none" for="customData">Custom Data</label>
-                    </div>
-                </div>
-
-                <!-- Custom Entry Input Box -->
-                <div class="form-floating mb-3 text-black col-sm-6 ms-auto d-none" id="customInput">
-                    <input type="text" class="form-control" placeholder="1">
-                    <label for="floatingInput">Enter 10-100 Positive Numbers (Use comma to separate multiple)</label>
-                    <!-- Invalid Feedback -->
-                    <div class="invalid-feedback text-white">
-                        Invalid input!
-                    </div>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary my-2">
-                    Submit!
-                </button>
-
-            </form>
-            ' . $this->getLastUpdate() . '
-            </div>
-        </div>';
     }
 
     // Method to get Search algorithm
@@ -221,6 +152,7 @@ class Search {
     public function displayResult() {
         echo "Hi";
     }
+
     // ---------------------------------------------- ^^ Main Methods ^^ ---------------------------------------------- 
 
     // Getter Method for $searchType
@@ -239,6 +171,19 @@ class Search {
         } else {
             return ucfirst($this->searchType) . " - Search";
         }
+    }
+
+    // Method to get last updated date/time
+    public function getLastUpdate() {
+        date_default_timezone_set('GMT');
+        return '<h4 class="fw-light text-start fs-5 mx-1">' . "Last Updated: " . date("jS F, g:ia", filemtime("sort.php")) . " UTC." . '</h4>';
+        // echo 'Last Updated:' . date("jS F, g:ia", filemtime("sort.php")) ;
+
+    }
+
+    // Method to get current display type
+    public function getCurrentDisplay() {
+        return $this->currentDisplay;
     }
 
     // ---------------------------------------------- ^^ Getters & Setters ^^ ---------------------------------------------- 

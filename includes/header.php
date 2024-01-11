@@ -55,7 +55,7 @@ if (strpos($_SERVER['PHP_SELF'], 'classes/') !== false || strpos($_SERVER['PHP_S
                         <!-- Sorts -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle <?php if (isset($navbarActive) && $navbarActive == "sorts") echo "active"; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Sorts
+                                Sort
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- 3 Options of sorts -->
@@ -73,7 +73,7 @@ if (strpos($_SERVER['PHP_SELF'], 'classes/') !== false || strpos($_SERVER['PHP_S
                         <!-- Searchs -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle <?php if (isset($navbarActive) && $navbarActive == "search") echo "active"; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Searchs
+                                Search
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- 3 Options of Searchs -->

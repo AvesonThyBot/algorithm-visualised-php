@@ -8,6 +8,7 @@ if (strpos($_SERVER['PHP_SELF'], 'classes/') !== false || strpos($_SERVER['PHP_S
 // Sort Class
 class Sort {
     // Properties
+    private $currentDisplay;
     private $sortType;
     private $validTypes = ['selection', 'bubble', 'insertion', 'merge', 'quick', 'counting', 'bogo', '', 'result'];
     private $sortInfo = [
@@ -72,17 +73,20 @@ class Sort {
         } else if (isset($type) && !in_array(strtolower($type), $this->validTypes)) {
             header('Location:../pages/sort.php');
         }
+
+        // Content Display
+        $this->contentDiplay();
     }
 
-    // Method to echo the correct web content based on GET request
+    // Method to change display type based on GET request
     public function contentDiplay() {
         if ($this->sortType == 'result') {
-            $this->displayResult();
+            $this->currentDisplay = 'result';
         } else if (!strlen($this->sortType) == 0) {
-            $this->sortAlgorithmContent();
+            $this->currentDisplay = 'specific';
             $this->getAlgorithm($this->sortType);
         } else {
-            $this->sortInfoContent();
+            $this->currentDisplay = 'all';
         }
     }
 
@@ -106,68 +110,11 @@ class Sort {
         }
     }
 
-    // Method to display Algoritm Content
-    public function sortAlgorithmContent() {
-        echo '<div class="container-fluid text-white my-3">
-        <!--Display Box -->
-        <div class="container-xl border border-primary">
-            <!-- Title -->
-            <h2 class="text-center">' . ucfirst($this->getCurrentType()) . '</h2>
-            <br>
-    
-            <!-- Data -->
-            <div class="container-xl border border-primary p-2 user-select-text text-center" id="dataDisplay">';
-
+    // Method to display Algoritm display Content
+    public function algorithmDataDisplay() {
         for ($height = 5; $height <= 500; $height += 5) {
             echo '<span class="bg-white d-inline-block" style="width: 10px; height: ' . $height . 'px;"></span>';
         }
-
-        echo '<h5 class="mt-2" id="heading">' . ucfirst($this->getCurrentType()) . ' Sort for data between 1 to 100.</h5>
-            </div>
-            <br>
-        </div>
-    
-        <!-- Options -->
-        <div class="container-xl border border-primary">
-            <br>
-            <!-- Input Form for Data entry & Settings -->
-            <form class="col g-3 needs-validation text-end" method="POST" action="../pages/sort.php?type=result" novalidate>
-
-                <!-- Randomise Data-->
-                <button type="button" class="btn btn-outline-primary text-start float-start" id="randomiseBtn">
-                    Randomise
-                </button>
-    
-                <!-- Select Type of Data Entry -->
-                <div class="select-data-entry container">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" checked="checked" name="dataEntry" id="defaultData" value="default">
-                        <label class="form-check-label user-select-none" for="defaultData">Default Data (1-100)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="dataEntry" id="customData" value="custom">
-                        <label class="form-check-label user-select-none" for="customData">Custom Data</label>
-                    </div>
-                </div>
-    
-                <!-- Custom Entry Input Box -->
-                <div class="form-floating mb-3 text-black col-sm-6 ms-auto d-none" id="customInput">
-                    <input type="text" class="form-control" id="customNumber" placeholder="1">
-                    <label for="floatingInput">Enter 10-100 Positive Numbers (Use comma to seperate multiple)</label>
-                    <!-- Invalid Feedback -->
-                    <div class="invalid-feedback text-white">
-                        Invalid input!
-                    </div>
-                </div>
-    
-                <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary my-2">
-                    Try Now!
-                </button>
-            </form>
-            <h4 class="fw-light text-start fs-5 mx-1">' . date("jS F, g:ia", filemtime("sort.php")) . '</h4>
-        </div>
-        </div>';
     }
 
     // Method to get sort algorithm
@@ -226,7 +173,12 @@ class Sort {
     // Method to get last updated date/time
     public function getLastUpdate() {
         date_default_timezone_set('GMT');
-        echo date("jS F, g:ia", filemtime("sort.php"));
+        echo 'Last Updated: ' . date("jS F, g:ia", filemtime("sort.php"));
+    }
+
+    // Method to get current display type
+    public function getCurrentDisplay() {
+        return $this->currentDisplay;
     }
     // ---------------------------------------------- ^^ Getters & Setters ^^ ---------------------------------------------- 
 
