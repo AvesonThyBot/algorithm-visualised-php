@@ -15,7 +15,7 @@ include("../includes/header.php"); ?>
 
 <!-- Main Searching Info -->
 <main class="text-white bg-dark d-flex flex-column row-gap-3 my-2 <?php if ($searchController->getCurrentDisplay() !== 'all') echo 'd-none'; ?>">
-    <div class="row m-0">';
+    <div class="row m-0">
         <?php
         // Loop each search type info
         $searchController->searchInfoContent()
@@ -65,7 +65,7 @@ include("../includes/header.php"); ?>
 
             <!-- Custom Entry Input Box -->
             <div class="form-floating mb-3 text-black col-sm-6 ms-auto d-none" id="customInput">
-                <input type="text" class="form-control" id="customNumber" placeholder="1">
+                <input type="text" class="form-control" id="customNumber" placeholder="1" name="customData">
                 <label for="floatingInput">Enter 10-100 Positive Numbers (Use comma to seperate multiple)</label>
                 <!-- Invalid Feedback -->
                 <div class="invalid-feedback  text-danger fw-bold">

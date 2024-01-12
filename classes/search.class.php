@@ -176,9 +176,7 @@ class Search {
     // Method to get last updated date/time
     public function getLastUpdate() {
         date_default_timezone_set('GMT');
-        return '<h4 class="fw-light text-start fs-5 mx-1">' . "Last Updated: " . date("jS F, g:ia", filemtime("sort.php")) . " UTC." . '</h4>';
-        // echo 'Last Updated:' . date("jS F, g:ia", filemtime("sort.php")) ;
-
+        echo 'Last Updated:' . date("jS F, g:ia", filemtime("search.php"));
     }
 
     // Method to get current display type
