@@ -68,7 +68,7 @@ include("../includes/header.php"); ?>
                 <input type="text" class="form-control" id="customNumber" placeholder="1">
                 <label for="floatingInput">Enter 10-100 Positive Numbers (Use comma to seperate multiple)</label>
                 <!-- Invalid Feedback -->
-                <div class="invalid-feedback text-white">
+                <div class="invalid-feedback  text-danger fw-bold">
                     Invalid input!
                 </div>
             </div>

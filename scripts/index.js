@@ -1,8 +1,6 @@
 // Variables
 const titleElement1 = document.body.querySelector("#title-sort");
 const titleElement2 = document.body.querySelector("#title-search");
-const titleElement3 = document.body.querySelector("#title-alg");
-const titleElement4 = document.body.querySelector("#title-vis");
 let currentTurn = 0;
 
 // function to get random characters from length
@@ -23,14 +21,14 @@ function randomChars(currentIndex, element, targetString, characterLimit) {
 		element.textContent = "";
 		randomChars(0, element, targetString, characterLimit);
 	}
-	console.log(currentIndex, element, targetString, characterLimit);
 }
 
-document.addEventListener("DOMContentLoaded", (event) => {
+// On Load
+document.onDOMContentLoaded = () => {
 	// Call each element
 	titleElement1.textContent = "";
 	randomChars(0, titleElement1, "Sorting &", 9);
 
 	titleElement2.textContent = "";
 	randomChars(0, titleElement2, "Searching", 9);
-});
+};
