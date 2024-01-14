@@ -14,7 +14,7 @@ $navbarActive = "search";
 include("../includes/header.php"); ?>
 
 <!-- Main Searching Info -->
-<main class="text-white bg-dark d-flex flex-column row-gap-3 my-2 <?php if ($searchController->getCurrentDisplay() !== 'all') echo 'd-none'; ?>">
+<main class="text-white bg-dark d-flex flex-column row-gap-3 my-2 <?php $searchController->getCurrentDisplay('all') ?>">
     <div class="row m-0">
         <?php
         // Loop each search type info
@@ -25,7 +25,7 @@ include("../includes/header.php"); ?>
 </main>
 
 <!-- Specific Search -->
-<section class="container-fluid text-white my-3 <?php if ($searchController->getCurrentDisplay() !== 'specific') echo 'd-none'; ?>">
+<section class="container-fluid text-white my-3 <?php $searchController->getCurrentDisplay('specific') ?>">
     <!--Display Box -->
     <div class="container-xl border border-primary">
         <!-- Title -->
@@ -80,6 +80,10 @@ include("../includes/header.php"); ?>
         </form>
         <h4 class="fw-light text-start fs-5 mx-1"><?php $searchController->getLastUpdate() ?></h4>
     </div>
+</section>
+
+<!-- Result Page -->
+<section class="container-fluid text-white my-3 <?php $searchController->getCurrentDisplay('result') ?>">
 </section>
 
 <!-- Footer -->

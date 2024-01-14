@@ -14,7 +14,7 @@ $navbarActive = "sorts";
 include("../includes/header.php"); ?>
 
 <!-- Main Sorting Info -->
-<main class="text-white bg-dark d-flex flex-column row-gap-3 my-2 <?php if ($sortController->getCurrentDisplay() !== 'all') echo 'd-none'; ?>">
+<main class="text-white bg-dark d-flex flex-column row-gap-3 my-2 <?php $sortController->getCurrentDisplay('all') ?>">
     <div class="row m-0">
         <?php
         // Loop each sort type info
@@ -25,7 +25,7 @@ include("../includes/header.php"); ?>
 </main>
 
 <!-- Specific sort -->
-<section class="container-fluid text-white my-3 <?php if ($sortController->getCurrentDisplay() !== 'specific') echo 'd-none'; ?>">
+<section class="container-fluid text-white my-3 <?php $sortController->getCurrentDisplay('specific') ?>">
     <!--Display Box -->
     <div class="container-xl border border-primary">
         <!-- Title -->
@@ -80,6 +80,10 @@ include("../includes/header.php"); ?>
         </form>
         <h4 class="fw-light text-start fs-5 mx-1"><?php $sortController->getLastUpdate() ?></h4>
     </div>
+</section>
+
+<!-- Result Page -->
+<section class="container-fluid text-white my-3 <?php $sortController->getCurrentDisplay('result') ?>">
 </section>
 
 <!-- Footer -->

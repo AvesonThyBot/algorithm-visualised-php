@@ -177,9 +177,12 @@ class Sort {
     }
 
     // Method to get current display type
-    public function getCurrentDisplay() {
-        return $this->currentDisplay;
+    public function getCurrentDisplay($type) {
+        if ($this->currentDisplay !== $type) {
+            echo "d-none";
+        }
     }
+
     // ---------------------------------------------- ^^ Getters & Setters ^^ ---------------------------------------------- 
 
 }

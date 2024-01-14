@@ -81,7 +81,7 @@ class Search {
     // Method to echo the correct web content based on GET request
     public function contentDiplay() {
         if ($this->searchType == 'result') {
-            $this->currentDisplay == 'result';
+            $this->currentDisplay = 'result';
         } else if (!strlen($this->searchType) == 0) {
             $this->currentDisplay = 'specific';
             $this->getAlgorithm($this->searchType);
@@ -180,8 +180,10 @@ class Search {
     }
 
     // Method to get current display type
-    public function getCurrentDisplay() {
-        return $this->currentDisplay;
+    public function getCurrentDisplay($type) {
+        if ($this->currentDisplay !== $type) {
+            echo "d-none";
+        }
     }
 
     // ---------------------------------------------- ^^ Getters & Setters ^^ ---------------------------------------------- 
